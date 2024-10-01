@@ -2,7 +2,7 @@ console.log('TEST Array.prototype.push')
 
 console.log('CASE and 400 to nums')
 
-var nums = [100,200, 300]
+var nums = [100, 200, 300]
 var length = nums.push(400)
 console.log(nums)
 // [100, 200, 300 400] (4)
