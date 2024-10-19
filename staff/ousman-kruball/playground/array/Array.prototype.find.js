@@ -1,6 +1,12 @@
 console.log('TEST Array.prototype.find')
 
 
+/* 
+El método find en JavaScript recorre un array y devuelve el primer elemento que cumple con la 
+condición especificada en una función. Si ningún elemento cumple la condición, devuelve undefined.
+*/
+
+
 console.log('CASE: Find the first numbers less than 20 in the array')
 
 // Declaramos un array de números
