@@ -18,3 +18,35 @@ var found = numbers.find(function(element){
 })
 
 console.log(found); // Imprimirá 6 ya que es menor que 20    
+
+
+console.log('CASE encontrar un nombre que se llame boksing')
+
+var persona = [
+
+    { name: 'MLD', age: 25 },
+    { name: 'bintu', age: 21 },
+    { name: 'boksing', age: 57 },
+    { name: 'luqman', age: 0 },
+    { name: 'Anastasia', age: 49 },
+    { name: 'Youname', age: 108}
+    
+]
+
+// Quiero imprimir boksing en la consola
+var found = persona.find(function(friend) {
+    return friend.name === 'boksing';
+})
+
+console.log(found)
+// {name: boksing age: 57}
+
+
+console.log('CASO: I need to print luqman')
+
+var hermano = persona.find(function(el){
+    return el.age == 0; 
+})
+
+console.log(hermano)
+// {name: Luqman: age: 0}
