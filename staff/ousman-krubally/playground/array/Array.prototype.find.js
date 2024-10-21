@@ -20,7 +20,7 @@ var found = numbers.find(function(element){
 console.log(found); // Imprimirá 6 ya que es menor que 20    
 
 
-console.log('CASE encontrar un nombre que se llame boksing')
+console.log('CASE: Find a name called "boksin"')
 
 var persona = [
 
@@ -33,16 +33,16 @@ var persona = [
     
 ]
 
-// Quiero imprimir boksing en la consola
-var found = persona.find(function(friend) {
+// Usamos find para buscar a la persona cuyo nombre es 'boksing'
+var foundPerson = persona.find(function(friend) {
     return friend.name === 'boksing';
 })
 
-console.log(found)
+console.log(foundPerson)
 // {name: boksing age: 57}
 
 
-console.log('CASO: I need to print luqman')
+console.log('CASO: I need to print "luqman"')
 
 var hermano = persona.find(function(el){
     return el.age == 0; 
