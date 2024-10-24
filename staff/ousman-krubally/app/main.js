@@ -1,25 +1,3 @@
-
-var users = []
-
-users[0] = { name: 'Ji Rafa', email: 'ji@rafa.com', username: 'jirafa', password: '123123123' }
-users[1] = { name: 'Ele Fante', email: 'ele@fante.com', username: 'elefante', password: '123123123' }
-users[2] = { name: 'Coco Drilo', email: 'coco@drilo.com', username: 'cocodrilo', password: '123123123' }
-
-debugger
-//business logic
-
-function authenticateUser(username, password) {
-    var user = users.find(function (user) {
-        return user.username === username && user.password === password
-
-    })
-    if (user === undefined) throw new Error('wrong credentials')
-    return user
-
-}
-
-//presentacion
-
 var sections = document.querySelectorAll('section')
 
 var welcomeSection = sections[0]
@@ -89,32 +67,21 @@ registerForm.addEventListener('submit', function (event) {
     var username = registerFormUsernameInput.value
     var password = registerFormPasswordInput.value
 
-
-    var user = user.find(function (user) {
-        return user.email === email || user.username === username
-    })
-
     var feedback = registerSection.querySelector('p')
 
-    if (user !== undefined) {
-        feedback.innerText = 'user already exists'
+    try {
+        registerUser(name, email, username, password)
 
-        return
+        registerForm.reset()
+        feedback.innerText = ''
+
+        registerSection.style.display = 'none'
+        loginSection.style.display = ''
+    } catch (error) {
+        feedback.innerText = error.message
+
+        console.error(error)
     }
-
-    var name = {}
-    user.name = name
-    user.email = email
-    user.usernmae = username
-    user.password = password
-
-    user.push(user)
-
-    registerForm.reset()
-    feedback.innerText = ''
-
-    registerSection.style.display = 'none'
-    loginSection.style.display = ''
 })
 
 var loginForm = loginSection.querySelector('form')
@@ -122,7 +89,7 @@ var loginForm = loginSection.querySelector('form')
 loginForm.addEventListener('submit', function (event) {
     event.preventDefault()
 
-    var loginFormInputs = loginForm.querySelectorAll('inputs')
+    var loginFormInputs = loginForm.querySelectorAll('input')
 
     var loginFormUsernameInput = loginFormInputs[0]
     var loginFormPasswordInput = loginFormInputs[1]
