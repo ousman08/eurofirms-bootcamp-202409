@@ -13,6 +13,7 @@ import authenticateUser from './logic/authenticateUser.js'
 import getUserName from './logic/getUserName.js'
 import createPost from './logic/createPost.js'
 import getPosts from './logic/getPosts.js'
+import deletePost from 'logic/deletePost.js'
 
 const { MONGO_URL, JWT_SECRET, PORT } = process.env
 
@@ -117,6 +118,20 @@ mongoose.connect(MONGO_URL)
 
                 createPost(userId, image, text)
                     .then(() => res.status(201).send())
+                    .catch(error => handleError(res, error))
+            } catch (error) {
+                handleError(res, error)
+            }
+        })
+
+        api.delete('/posts/:postId', (req, res) => {
+            try {
+                const userId = verifyToken(req)
+
+                const postId = req.params.postId
+
+                deletePost(userId, postId)
+                    .then(() => res.status(204).send())
                     .catch(error => handleError(res, error))
             } catch (error) {
                 handleError(res, error)
