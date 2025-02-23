@@ -5,15 +5,14 @@ import cors from 'cors'
 import jwt from 'jsonwebtoken'
 import { errors } from 'com'
 
-const { ValidationError, DuplicityError, SystemError, CredentialsError,
-    NotFoundError, OwnershipError } = errors
+const { ValidationError, DuplicityError, SystemError, CredentialsError, NotFoundError, OwnershipError } = errors
 
 import registerUser from './logic/registerUser.js'
 import authenticateUser from './logic/authenticateUser.js'
 import getUserName from './logic/getUserName.js'
 import createPost from './logic/createPost.js'
 import getPosts from './logic/getPosts.js'
-import deletePost from 'logic/deletePost.js'
+import deletePost from './logic/deletePost.js'
 
 const { MONGO_URL, JWT_SECRET, PORT } = process.env
 
