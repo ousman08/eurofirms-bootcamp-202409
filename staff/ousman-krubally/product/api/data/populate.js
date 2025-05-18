@@ -15,7 +15,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
     //.then(() => User.create({ name: 'Peter Pan', email: 'peter@pan.com', username: 'peterpan', password: '123123123' }))
     //.then(() => User.create({ name: 'Wendy Darling', email: 'wendy@darling.com', username: 'wendydarling', password: '123123123' }))
     .then(() => {
-        const pepito = new User({ name: 'ito Grillo', email: 'ito@grillo.com', username: 'itogrillo', password: '123123123' })
+        const pepito = new User({ name: 'pepito Grillo', email: 'pepito@grillo.com', username: 'pepitogrillo', password: '123123123' })
         const campa = new User({ name: 'Campa Nilla', email: 'campa@nilla.com', username: 'campanilla', password: '123123123' })
         const peter = new User({ name: 'Peter Pan', email: 'peter@pan.com', username: 'peterpan', password: '123123123' })
         const wendy = new User({ name: 'Wendy Darling', email: 'wendy@darling.com', username: 'wendydarling', password: '123123123' })
