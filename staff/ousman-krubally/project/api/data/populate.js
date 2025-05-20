@@ -14,4 +14,18 @@ mongoose.connect('mongodb://127.0.0.1:27017/mattas')
 
      })
     
+// Readme =>
+// data 
+   //models
+       // acarbar.todo
 
+    //populate
+        //pruebas models todo
+
+        //logic
+            
+            // registerUser
+            // authenticateUser
+            // getUserName
+
+            //al tener esto empezar con la app

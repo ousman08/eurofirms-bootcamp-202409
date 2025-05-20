@@ -28,7 +28,7 @@ const user = new Schema({
     }
 })
 
-const post = new Schema({
+const product = new Schema({
     author: {
         type: ObjectId,
         required: true,
@@ -39,10 +39,20 @@ const post = new Schema({
         required: true,
         maxLength: 1000
     },
-    text: {
+    title: {
         type: String,
         required: true,
         maxLength: 1000
+    },
+    description: {
+        type: String,
+        required: true,
+
+    },
+    category: {
+        type: String,
+        required: true,
+        // aqui una aray con las categorias
     },
     date: {
         type: Date,
@@ -52,9 +62,9 @@ const post = new Schema({
 })
 
 const User = model('User', user)
-const Post = model('Post', post)
+const  Product = model('Product', product)
 
-export{
+export {
     User,
-    Post
+    Product
 }
