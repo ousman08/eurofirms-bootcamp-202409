@@ -14,33 +14,38 @@ function App() {
     const [view, setView] = useState(isUserLoggedIn() ? 'home' : 'welcome')
 
     console.log('App -> state: view = ' + view)
+    
+    const handleRegisterClick = () => setView('register')
+    const handleLoginClick = () => setView('login')
+    const handleRegisterSuccess = () => setView('login')
+    const handleLoginSuccess = () => setView('home')
+    const handleLogout = () => setView('login')
+    const handleCreatePost = () => setView('create-post')
+    const handlePostCreated = () => setView('home')
+
     return <>
         {view === 'welcome' && <Welcome
-            onRegisterClick={() => setView('register')}
-
-            onLoginClick={() => setView('login')}
+            onRegisterClick={handleRegisterClick}
+            onLoginClick={handleLoginClick}
         />}
 
         {view === 'register' && <Register
-            onLoginClick={() => setView('login')}
-
-            onRegisterSuccess={() => setView('login')}
+            onLoginClick={handleLoginClick}
+            onRegisterSuccess={handleRegisterSuccess}
         />}
 
         {view === 'login' && <Login
-            onRegisterClick={() => setView('register')}
-
-            onLoginSuccess={() => setView('home')}
+            onRegisterClick={handleRegisterClick}
+            onLoginSuccess={handleLoginSuccess}
         />}
 
         {view === 'home' && <Home
-            onLogout={() => setView('login')}
-
-            onCreatePost={() => setView('create-post')}
+            onLogout={handleLogout}
+            onCreatePost={handleCreatePost}
         />}
 
         {view === 'create-post' && <CreatePost
-            onCreated={() => setView('home')}
+            onCreated={handlePostCreated}
         />}
     </>
 }

@@ -6,6 +6,7 @@ function loginUser(username, password) {
     validate.username(username)
     validate.password(password)
 
+    console.log("API URL:", import.meta.env.VITE_API_URL) 
     return fetch(`${import.meta.env.VITE_API_URL}/users/auth`, {
         method: 'POST',
         headers: {
