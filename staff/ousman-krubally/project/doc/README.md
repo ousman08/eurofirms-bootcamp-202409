@@ -44,7 +44,7 @@ Admin (user)
 - com (validation, errors)
 - doc (documentation)
 
-### Techas
+### Techanologies
 
 - HTML / CSS / JS
 - React
@@ -73,7 +73,7 @@ Product
 Order
 - id (uuid)
 - user (User.id, required)
-- items ([Item])
+- items ([Item])  // Lista de cosas que pedió
 - date (date, required)
 - status (string, required, open|closed)
 

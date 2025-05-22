@@ -18,7 +18,6 @@ const user = new Schema({
         type: String,
         required: true,
         minLength: true,
-        minLength: 4,
         unique: true
     },
     password: {
@@ -52,7 +51,7 @@ const product = new Schema({
     category: {
         type: String,
         required: true,
-        // aqui una aray con las categorias
+        enum: [cake,dish,juice,shake,dessert]
     },
     date: {
         type: Date,
