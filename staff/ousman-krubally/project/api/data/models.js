@@ -17,7 +17,7 @@ const user = new Schema({
     username: {
         type: String,
         required: true,
-        minLength: true,
+        minLength: 3,
         unique: true
     },
     password: {
@@ -46,12 +46,13 @@ const product = new Schema({
     description: {
         type: String,
         required: true,
+        maxLength: 1000
 
     },
     category: {
         type: String,
         required: true,
-        enum: [cake,dish,juice,shake,dessert]
+        enum: ['cake', 'dish', 'juice', 'shake', 'dessert']
     },
     date: {
         type: Date,
@@ -61,7 +62,7 @@ const product = new Schema({
 })
 
 const User = model('User', user)
-const  Product = model('Product', product)
+const Product = model('Product', product)
 
 export {
     User,
