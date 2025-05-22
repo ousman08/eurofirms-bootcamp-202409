@@ -34,9 +34,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/test')
         ])
     })
     .then(items => {
-        const [pepito, campa, peter, wendy, postOfPeter] = items
+        const [pepito, campa, peter, wendy, postOfPeter, postOfWendy] = items
 
-        console.log(pepito, campa, peter, wendy, postOfPeter)
+        console.log(pepito, campa, peter, wendy, postOfPeter, postOfWendy)
 
         // return User.deleteOne({ _id: campa._id })
 
