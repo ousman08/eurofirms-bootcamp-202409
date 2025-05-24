@@ -28,6 +28,7 @@ const user = new Schema({
 })
 
 const product = new Schema({
+    
     author: {
         type: ObjectId,
         required: true,
