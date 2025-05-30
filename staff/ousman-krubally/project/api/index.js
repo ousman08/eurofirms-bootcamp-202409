@@ -63,6 +63,20 @@ mongoose.connect(MONGO_URL)
             }
         })
 
+        api.post('/users/auth', jsonBodyParser, (req, res) => {
+            try {
+                const username = req.body.username
+                const password = req.body.password
+
+                authenticateUser(username, password)
+                .then(userId => jwt.sign({sub: userId }, JWT_SECRET))
+                .then(token => res.json(token))
+                .catch(error => handleError(res, error))
+            } catch (error) {
+                handleError(res, error)
+            }
+        })
+
         api.listen(PORT, () => console.log(`API is up on port ${PORT}`))
     })
     .catch(error => console.error(error))
