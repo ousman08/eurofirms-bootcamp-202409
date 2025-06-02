@@ -8,6 +8,8 @@ import { errors } from 'com'
 const { ValidationError, DuplicityError, SystemError, CredentialsError, NotFoundError, OwnershipError } = errors
 
 import registerUser from './logic/registerUser.js'
+import authenticateUser from './logic/authenticateUser.js'
+import getUserName from './logic/getUserName.js'
 
 const { MONGO_URL, JWT_SECRET, PORT } = process.env
 
@@ -69,9 +71,23 @@ mongoose.connect(MONGO_URL)
                 const password = req.body.password
 
                 authenticateUser(username, password)
-                .then(userId => jwt.sign({sub: userId }, JWT_SECRET))
-                .then(token => res.json(token))
-                .catch(error => handleError(res, error))
+                    .then(userId => jwt.sign({ sub: userId }, JWT_SECRET))
+                    .then(token => res.json(token))
+                    .catch(error => handleError(res, error))
+            } catch (error) {
+                handleError(res, error)
+            }
+        })
+
+        api.get('/users/:targetUserId/name', (req, res) => {
+            try {
+                const userId = verifyToken(req)
+
+                const targetUserId = req.params.targetUserId
+
+                getUserName(userId, targetUserId)
+                    .then(name => res.json(name))
+                    .catch(error => handleError(res, error))
             } catch (error) {
                 handleError(res, error)
             }
