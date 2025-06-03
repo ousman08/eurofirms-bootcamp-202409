@@ -1,6 +1,6 @@
 import { errors } from 'com'
 
-const { CredentialsErrors, SystemError, ValidationError } = errors
+const { CredentialsError, SystemError, ValidationError } = errors
 
 import loginUser from '../logic/loginUser'
 
