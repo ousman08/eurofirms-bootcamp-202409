@@ -37,7 +37,7 @@ function App() {
         />}
 
         {view === 'home' && <Home
-            onlogout={handleLogout}
+            onLogout={handleLogout}
         />}
 
     </>

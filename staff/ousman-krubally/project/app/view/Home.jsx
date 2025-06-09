@@ -37,7 +37,7 @@ function Home(props) {
         }
     }, [])
 
-    const handleLoginClick = () => {
+    const handleLogoutClick = () => {
         try {
             logoutUser()
 
@@ -50,10 +50,10 @@ function Home(props) {
     }
 
     return <>
-        <header className="">
+        <header>
             {name && <h3>{name}</h3>}
 
-            <button type='button' onClick={handleLoginClick}>logout</button>
+            <button type='button' onClick={handleLogoutClick}>##</button>
         </header>
 
        
