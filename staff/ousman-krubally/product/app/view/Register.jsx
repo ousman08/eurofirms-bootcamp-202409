@@ -44,29 +44,87 @@ function Register(props) {
         props.onLoginClick()
     }
 
-    return <main>
-        <h2>Register</h2>
+    return (
+        <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+            {/* caja del formulario */}
+            <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-md border border-gray-100">
 
-        <form onSubmit={handleRegisterSubmit}>
-            <label htmlFor="name">Name</label>
-            <input type="text" id="name" />
+                <h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
+                    Register
+                </h2>
 
-            <label htmlFor="email">E-mail</label>
-            <input type="email" id="email" />
+                <form onSubmit={handleRegisterSubmit} className="space-y-4">
+                    <div>
+                        <label htmlFor="name" className="mb-1 block text-sm font-medium text-gray-700">Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            className="w=full rounded-lg border border-gray-300 px-3"
+                        />
+                    </div>
 
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" />
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="mb-1 block text-sm font-medium text-gray-700"
+                        >E-mail
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            className="w=full rounded-lg border border-gray-300 px-3"
+                        />
+                    </div>
 
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" />
+                    <div>
+                        <label
+                            htmlFor="username"
+                            className="mb-1 block text-sm font-medium text-gray-700">
+                            Username
+                        </label>
+                        <input
+                            type="text"
+                            id="username"
+                            className="w=full rounded-lg border border-gray-300 px-3"
+                        />
+                    </div>
 
-            <button type="submit">Register</button>
-        </form >
+                    <div>
+                        <label
+                            htmlFor="password"
+                            className="mb-1 block text-sm font-medium text-gray-700"
+                        >
+                            Password
+                        </label>
+                        <input
+                            type="password"
+                            id="password"
+                            className="w=full rounded-lg border border-gray-300 px-3"
+                        />
+                    </div>
 
-        <p></p>
+                    <button
+                        type="submit"
+                        className="w-full rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700"
+                    >
+                        Register
+                    </button>
+                </form >
 
-        <a href="" onClick={handleLoginClick}>Login</a>
-    </main >
+                <p>
+                    Already have an account?{' '}
+
+                    <a
+                        href=""
+                        onClick={handleLoginClick}
+                        className="font-medium text-blue-600 hover:underline"
+                    >
+                        Login
+                    </a>
+                </p>
+            </div>
+        </main >
+    )
 }
 
 export default Register

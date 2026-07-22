@@ -13,10 +13,34 @@ function Welcome(props) {
         props.onLoginClick()
     }
 
-    return <main>
-        <h2>Welcome!</h2>
-        <p>Please, <a href="" onClick={handleRegisterClick}>Registere</a> or <a href="" onClick={handleLoginClick}>Login </a>.</p>
-        </main>
+    // Estilo sencillo y modernos
+    const mainStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        fontFamily: 'system-ui, sans-serif',
+        backgroundColor: '#f9f9f9',
+        color: '#333',
+    }
+    
+    const linkStyle = {
+        color: '#0070f3',
+        textDecoration: 'none',
+        fontWeight: 'bold',
+        }
+        
+    return <main style={mainStyle}>
+        <h2 style={{fontSize: '2.5rem', marginBottom: '1rem' }}>Welcome!</h2>
+        <p style={{fontSize: '1.2rem' }}>
+            Please,{' '}
+            <a href="register" onClick={handleRegisterClick} style={linkStyle}>
+                Register
+                </a>{' '}
+                or{' '}
+            <a href="login" onClick={handleLoginClick} style={linkStyle}>Login</a>.</p>
+    </main>
 }
 
 export default Welcome

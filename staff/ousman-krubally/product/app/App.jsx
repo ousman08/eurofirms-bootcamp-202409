@@ -21,6 +21,7 @@ function App() {
     const handleLoginSuccess = () => setView('home')
     const handleLogout = () => setView('login')
     const handleCreatePost = () => setView('create-post')
+    const handleCancelCreatePost = () => setView('home')
     const handlePostCreated = () => setView('home')
 
     return <>
@@ -46,6 +47,7 @@ function App() {
 
         {view === 'create-post' && <CreatePost
             onCreated={handlePostCreated}
+            onCancel={handleCancelCreatePost}
         />}
     </>
 }

@@ -1,7 +1,7 @@
-fetch('http://localhost:8080/users/674a3fd9a081a9e0cded3a7a/name', {
+fetch('http://localhost:8080/users/6a26262a551521198ed92866/name', {
     method: 'GET',
     headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzRhM2ZkOWEwODFhOWUwY2RlZDNhN2EiLCJpYXQiOjE3MzQxOTYxODF9.1vDSszkvYL0lu9nryV2G13dHZyISJvLFvZ5eK6v_3Y8'
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTI2MjYyYTU1MTUyMTE5OGVkOTI4NjYiLCJpYXQiOjE3ODA4ODY5NTJ9.yr6A41Ka_ghNL1HGfOK-TWu-xwV4QjFM_ErNumh9Ozs'
     }
 })
     .then(response => {

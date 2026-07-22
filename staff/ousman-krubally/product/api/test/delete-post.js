@@ -1,7 +1,7 @@
-fetch('http://localhost:8080/posts/67546b737a15aa6ef3ddb207', {
+fetch('http://localhost:8080/posts/6a3becb2e9fed592831d791e', {
     method: 'DELETE',
     headers: {
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzU0MzhlNjM2MzZmYTAwOWM3NzU5YjEiLCJpYXQiOjE3MzM1ODU2MDN9.it60GGiwSbVZ603-WGHcpX3ZYAubDZXHL8eZJDw7sxA'
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2YTI2MjYyYTU1MTUyMTE5OGVkOTI4NjYiLCJpYXQiOjE3ODEwMjk3NDN9.R9mSINCJPBUr7FT4d5pa6dOCMhrMHR12pRllk_lAwQw'
     }
 })
     .then(response => {
