@@ -1,5 +1,6 @@
-{"framework": "vite",
- "buildCommand": "pnpm build",
- "outputDirectory": "dist",
- "rootDirectory": "staff/ousman-krubally/product/app"
- }
+{
+    "framework": "vite",
+    "buildCommand": "pnpm build",
+    "outputDirectory": "dist",
+    "rootDirectory": "staff/ousman-krubally/product/app"
+}
